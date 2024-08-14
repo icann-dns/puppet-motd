@@ -4,3 +4,7 @@
 fixtures:
   forge_modules:
     stdlib: "puppetlabs/stdlib"
+    provision: 'https://github.com/puppetlabs/provision'
+    puppet_agent: 'https://github.com/puppetlabs/puppetlabs-puppet_agent'
+    facts: 'https://github.com/puppetlabs/puppetlabs-facts'
+    translate: 'https://github.com/puppetlabs/puppetlabs-translate'
