@@ -1,6 +1,6 @@
 {
   "name": "icann-motd",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "b4ldr",
   "summary": "A module for managing the motd file on linux systems",
   "license": "Apache-2.0",
