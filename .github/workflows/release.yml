@@ -1,9 +1,23 @@
-name: "Publish module"
+name: Release
 
 on:
-  workflow_dispatch:
+  push:
+    tags:
+      - '*'
 
 jobs:
   release:
-    uses: "puppetlabs/cat-github-actions/.github/workflows/module_release.yml@main"
-    secrets: "inherit"
+    name: Release
+    uses: voxpupuli/gha-puppet/.github/workflows/release.yml@v2
+    with:
+      allowed_owner: 'icann-dns'
+    secrets:
+      username: ${{ secrets.PUPPET_FORGE_USERNAME }}
+      api_key: ${{ secrets.PUPPET_FORGE_API_KEY }}
+
+  create-github-release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create GitHub release
+        uses: voxpupuli/gha-create-a-github-release@v1
