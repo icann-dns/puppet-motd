@@ -6,7 +6,7 @@ describe 'motd::script' do
   let(:title) { 'namevar' }
   let(:params) do
     {
-      content: "message",
+      content: 'message',
     }
   end
 
