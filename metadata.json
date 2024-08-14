@@ -1,10 +1,12 @@
 {
   "name": "icann-motd",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "b4ldr",
   "summary": "A module for managing the motd file on linux systems",
   "license": "Apache-2.0",
   "source": "https://github.com/icann-dns/puppet-motd",
+  "project_page": "https://github.com/icann-dns/puppet-motd",
+  "issues_url": "https://github.com/icann-dns/puppet-motd/issues",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
