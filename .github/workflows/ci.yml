@@ -1,13 +1,13 @@
 ---
----
 name: CI
 
 on:
-  pull_request: {}
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
-      - master
 
 concurrency:
   group: ${{ github.ref_name }}
