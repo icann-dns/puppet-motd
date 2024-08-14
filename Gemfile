@@ -45,7 +45,7 @@ group :system_tests do
   gem "serverspec", '~> 2.41',     require: false
 end
 
-puppet_version = ENV['PUPPET_GEM_VERSION']
+puppet_version = ENV['PUPPET_GEM_VERSION'] || '~> 7.24'
 facter_version = ENV['FACTER_GEM_VERSION']
 hiera_version = ENV['HIERA_GEM_VERSION']
 
