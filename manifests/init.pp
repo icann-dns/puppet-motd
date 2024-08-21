@@ -22,7 +22,6 @@ class motd (
     purge   => true,
   }
 
-  include motd::defaults
   $messages.each |$title, $params| {
     motd::message { $title:
       * => $params,
