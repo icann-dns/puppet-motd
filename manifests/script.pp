@@ -4,10 +4,12 @@
 #
 # @example
 #   motd::script { 'namevar': }
+# @param enable if we should enable the motd
 # @param priority where in the motd list whill the message display.  higher values wil be at the bottom
 # @param content the raw content of the message
 # @param source a source location for the message
 define motd::script (
+  Boolean                      $enable  =  true,
   Integer[0, 99]               $priority  = 50,
   Optional[String]             $content = undef,
   Optional[Stdlib::Filesource] $source  = undef,
@@ -25,7 +27,7 @@ define motd::script (
   $script    = sprintf('%02d-%s', $priority, $safe_name)
 
   file { "/etc/update-motd.d/${script}":
-    ensure  => file,
+    ensure  => stdlib::ensure($enable, 'file'),
     content => $content,
     source  => $source,
     mode    => '0555',
